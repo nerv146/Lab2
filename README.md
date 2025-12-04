@@ -371,8 +371,7 @@ public class Number3 {
 
 
 ### 5.Код программы
-```java
-import java.io.PrintStream;
+```javaimport java.io.PrintStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 import java.io.IOException;
@@ -393,12 +392,14 @@ public class Number4 {
             arr[i] = in.nextInt();
             sum += arr[i];
         }
+        double z = 0;
         int index = 0;     //переменная для хранения индекса искомого числа
         double znachenie = func(arr,arr[0],sum);  // искомое значение, начинаем перебирать с первого эл-та
-        for (int e = 1; e<arr.length;++e)
-            if (func(arr,arr[e],sum) < znachenie) {  // если искомое значение текущей переменной, меньше минимально найденного
-                znachenie = func(arr,arr[e],sum);    // обновляем минимум и индекс
-                index = e;
+        for (int e = 1; e<arr.length;++e) {
+            z = func(arr,arr[e],sum);
+            if (z < znachenie) {  // если искомое значение текущей переменной, меньше минимально найденного
+                znachenie = z;    // обновляем минимум и индекс
+                index = e; }
             }
         out.println("Значение искомого элемента:" + arr[index]);
         out.println("Этот элемент находится на " + (index+1) + " позиции");
